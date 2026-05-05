@@ -71,8 +71,8 @@ window.onload = () => {
   document.querySelector(".page").classList.add("show");
 };
 
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function(e) {
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", function (e) {
     const href = this.getAttribute("href");
 
     if (href && !href.startsWith("#")) {

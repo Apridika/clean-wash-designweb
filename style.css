@@ -400,7 +400,7 @@ footer {
   to { background-position: 200%; }
 }
 
-.page {
+/* .page {
   opacity: 0;
   filter: blur(2px);
   transition: opacity 0.6s ease, filter 0.6s ease;
@@ -442,7 +442,7 @@ footer {
   border-top: 4px solid #00bcd4;
   border-radius: 50%;
   animation: spin 0.9s linear infinite;
-}
+} */
 
 @keyframes spin {
   to {

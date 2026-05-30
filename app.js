@@ -68,26 +68,26 @@ galleryCards.forEach((card, index) => {
 });
 
 // fungsi untuk menampilkan loader saat pindah halaman
-window.onload = () => {
-  document.querySelector(".page").classList.add("show");
-};
+// window.onload = () => {
+//   document.querySelector(".page").classList.add("show");
+// };
 
-document.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
+// document.querySelectorAll("a").forEach((link) => {
+//   link.addEventListener("click", function (e) {
+//     const href = this.getAttribute("href");
 
-    if (href && !href.startsWith("#")) {
-      e.preventDefault();
+//     if (href && !href.startsWith("#")) {
+//       e.preventDefault();
 
-      document.getElementById("loader").classList.add("show");
-      document.querySelector(".page").classList.add("fade-out");
+//       document.getElementById("loader").classList.add("show");
+//       document.querySelector(".page").classList.add("fade-out");
 
-      setTimeout(() => {
-        window.location.href = href;
-      }, 650);
-    }
-  });
-});
+//       setTimeout(() => {
+//         window.location.href = href;
+//       }, 650);
+//     }
+//   });
+// });
 
 // FITUR KERANJANG PEMESANAN
 

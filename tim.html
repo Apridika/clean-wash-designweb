@@ -37,6 +37,69 @@
         display: inline-block !important;
         /* Menjaga ukuran tombol sesuai CSS lamamu */
     }
+
+    :root {
+        --primary-clean: #49b1c8;
+        /* Biru muda khas laundry */
+        --secondary-wash: #ffffff;
+        /* Hijau mint fresh */
+        --dark-clean: #333;
+    }
+
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .bg-gradient-clean {
+        background: linear-gradient(135deg, var(--primary-clean), var(--primary-clean));
+    }
+
+    /* Styling Kartu Profil Anggota Tim */
+    .team-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .team-img-wrapper {
+        position: relative;
+        overflow: hidden;
+        background-color: #e9ecef;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Icon pengganti jika belum ada foto asli */
+    .team-placeholder-icon {
+        font-size: 5rem;
+        color: #adb5bd;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #f1f3f5;
+        color: #495057;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    .social-links a:hover {
+        background-color: var(--primary-clean);
+        color: white;
+    }
 </style>
 
 <body>
@@ -45,7 +108,7 @@
     <header>
         <nav class="nav">
             <div class="logo">
-                <span class="gradient-text">CleanWash</span>
+                <span class="gradient-text"> <a href="login.html">CleanWash</a></span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
@@ -64,6 +127,91 @@
     <main class="" style="height: 600px;">
 
     </main>
+
+    <!-- <div class="bg-gradient-clean text-white text-center pt-5 shadow-sm">
+        <div class="container pt-5 pb-2">
+            <h1 class="display-4 fw-bold">Karyawan Profesional Kami</h1>
+            <p class="lead">Pakaian Anda ditangani oleh tim ahli yang berpengalaman, jujur, dan teliti.</p>
+        </div>
+    </div>
+
+    <main class="container my-5 py-3">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card h-100 shadow-sm text-center">
+                    <div class="team-img-wrapper">
+                        <i class="fa-solid fa-user-tie team-placeholder-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-dark mb-1">Budi Santoso</h5>
+                        <p class="text-muted small mb-3">Operational Manager</p>
+                        <p class="card-text text-secondary small">Memastikan seluruh alur pelayanan dan operasional
+                            laundry berjalan tepat waktu setiap hari.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card h-100 shadow-sm text-center">
+                    <div class="team-img-wrapper">
+                        <i class="fa-solid fa-soap team-placeholder-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-dark mb-1">Siti Rahma</h5>
+                        <p class="text-muted small mb-3">Washing Specialist</p>
+                        <p class="card-text text-secondary small">Ahli dalam menganalisis jenis kain dan noda,
+                            memastikan pakaian bersih maksimal tanpa merusak serat kain.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card h-100 shadow-sm text-center">
+                    <div class="team-img-wrapper">
+                        <i class="fa-solid fa-shirt team-placeholder-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-dark mb-1">Agus Kurniawan</h5>
+                        <p class="text-muted small mb-3">Ironing Expert</p>
+                        <p class="card-text text-secondary small">Spesialis setrika uap berkecapatan tinggi yang
+                            menjamin pakaian Anda kembali dalam kondisi super rapi dan wangi.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card team-card h-100 shadow-sm text-center">
+                    <div class="team-img-wrapper">
+                        <i class="fa-solid fa-motorcycle team-placeholder-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-dark mb-1">Rian Hidayat</h5>
+                        <p class="text-muted small mb-3">Delivery Courier</p>
+                        <p class="card-text text-secondary small">Kurir ramah andalan yang siap menjemput pakaian kotor
+                            dan mengantarkannya kembali tepat di depan pintu rumah Anda.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main> -->
 
     <footer>
         <div class="footer-content">

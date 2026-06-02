@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
@@ -44,7 +44,7 @@ header {
 }
 
 .nav-links li a:hover {
-  background-color: #dfdfdf; ;
+  background-color: #dfdfdf;
   color: #49b1c8;
 }
 
@@ -269,7 +269,6 @@ header {
   transform: translateY(0);
 }
 
-
 .service-card:hover {
   background-color: #f9f9f9;
   border-color: #49b1c8;
@@ -380,14 +379,12 @@ footer {
   color: #aaa;
 }
 
-
-
 .page-containers {
   padding: 100px 10% 60px 10%;
   text-align: center;
 }
 
-  /* .gradient-text {
+/* .gradient-text {
     background: linear-gradient(90deg, #ffffff, #00bcd4, #ffffff);
     background-size: 200%;
     -webkit-background-clip: text;
@@ -397,7 +394,9 @@ footer {
   } */
 
 @keyframes gradientMove {
-  to { background-position: 200%; }
+  to {
+    background-position: 200%;
+  }
 }
 
 /* .page {
@@ -465,4 +464,31 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+header .nav-links a.btn-nav-login {
+  background-color: #ffffff !important;
+  /* Latar belakang putih bersih */
+  color: #49b1c8 !important;
+  /* Teks mengikuti warna biru tema CleanWash */
+  padding: 8px 18px !important;
+  /* Memberi ruang di dalam tombol */
+  border-radius: 20px !important;
+  /* Membuat tombol melengkung halus/oval */
+  font-weight: bold !important;
+  /* Menebalkan teks */
+  transition: all 0.3s ease !important;
+  border: 2px solid transparent !important;
+}
+
+/* Efek saat tombol disorot kursor (Hover) */
+header .nav-links a.btn-nav-login:hover {
+  background-color: transparent !important;
+  /* Latar belakang jadi transparan */
+  color: #ffffff !important;
+  /* Teks berubah jadi putih */
+  border: 2px solid #ffffff !important;
+  /* Muncul garis tepi putih */
+  transform: scale(1.05);
+  /* Tombol sedikit membesar lembut */
 }

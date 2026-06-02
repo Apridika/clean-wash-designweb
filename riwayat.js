@@ -1,39 +1,41 @@
-const dummyOrder = [
-  {
-    id: "001",
-    items: [
-      { name: "Cuci Kering", qty: "5kg" },
-      { name: "Cuci Karpet", qty: "1lm" },
-    ],
-    status: "Selesai",
-    total: "Rp 100.000",
-  },
-  {
-    id: "002",
-    items: [{ name: "Cuci Setrika", qty: "3kg" }],
-    status: "Proses",
-    total: "Rp 30.000",
-  },
-  {
-    id: "003",
-    items: [
-      { name: "Cuci Bedcover", qty: "1pcs" },
-      { name: "Cuci Selimut", qty: "1pcs" },
-      { name: "Cuci Sprei", qty: "2pcs" },
-    ],
-    status: "Pending",
-    total: "Rp 150.000",
-  },
-  {
-    id: "004",
-    items: [
-      { name: "Setrika Saja", qty: "4kg" },
-      { name: "Cuci Kering", qty: "2kg" },
-    ],
-    status: "Selesai",
-    total: "Rp 70.000",
-  },
-];
+// const dummyOrder = [
+//   {
+//     id: "001",
+//     items: [
+//       { name: "Cuci Kering", qty: "5kg" },
+//       { name: "Cuci Karpet", qty: "1lm" },
+//     ],
+//     status: "Selesai",
+//     total: "Rp 100.000",
+//   },
+//   {
+//     id: "002",
+//     items: [{ name: "Cuci Setrika", qty: "3kg" }],
+//     status: "Proses",
+//     total: "Rp 30.000",
+//   },
+//   {
+//     id: "003",
+//     items: [
+//       { name: "Cuci Bedcover", qty: "1pcs" },
+//       { name: "Cuci Selimut", qty: "1pcs" },
+//       { name: "Cuci Sprei", qty: "2pcs" },
+//     ],
+//     status: "Pending",
+//     total: "Rp 150.000",
+//   },
+//   {
+//     id: "004",
+//     items: [
+//       { name: "Setrika Saja", qty: "4kg" },
+//       { name: "Cuci Kering", qty: "2kg" },
+//     ],
+//     status: "Selesai",
+//     total: "Rp 70.000",
+//   },
+// ];
+
+const dummyOrder = JSON.parse(localStorage.getItem("cleanwash_orders")) || [];
 
 const orderList = document.getElementById("order-list");
 
@@ -84,4 +86,4 @@ function renderOrders() {
   });
 }
 
-setTimeout(renderOrders, 2000);
+setTimeout(renderOrders, 500);

@@ -214,6 +214,9 @@ window.kirimWhatsApp = function () {
     JSON.parse(localStorage.getItem("cleanwash_orders")) || [];
   semuaPesanan.push({
     id: Math.floor(Math.random() * 1000),
+    customerName: name,
+    customerPhone: phone,
+    customerAddress: address,
     items: cart,
     status: "Pending",
     total: total,

@@ -76,7 +76,7 @@ function renderOrders() {
                 <p class="card-text"><strong>Total:</strong> ${order.total}</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-primary w-100 p-2">Detail Pesanan</button>
+            <a href="detail-order.html?id=${order.id}" class="btn btn-primary w-100 p-2">Detail Pesanan</a>
             </div>
           </div>
         </div>

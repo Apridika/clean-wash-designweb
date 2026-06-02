@@ -133,10 +133,17 @@
                         </div>
 
                         <!-- Input Password menggunakan Bootstrap Floating Labels -->
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Password"
-                                required>
-                            <label for="loginPassword">Kata Sandi</label>
+                        <div class="position-relative mb-3">
+                            <div class="form-floating">
+                                <input type="password" class="form-control pe-5" id="loginPassword"
+                                    placeholder="Password" required>
+                                <label for="loginPassword">Kata Sandi</label>
+                            </div>
+                            <button type="button" id="togglePassword"
+                                class="btn position-absolute top-50 end-0 translate-middle-y me-3 text-secondary border-0 bg-transparent"
+                                style="z-index: 10;">
+                                <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                            </button>
                         </div>
 
                         <!-- Fitur Ingat Saya & Lupa Password -->
@@ -170,34 +177,53 @@
 
 <script src="app.js"></script>
 <script>
-    document.getElementById('formLogin').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const passwordInput = document.getElementById('loginPassword');
+        const eyeIcon = document.getElementById('eyeIcon');
 
-    // 1. Ambil input dari form
-    const usernameInput = document.getElementById('loginEmail').value; 
-    const passwordInput = document.getElementById('loginPassword').value;
+        // Cek tipe input saat ini
+        if (passwordInput.type === 'password') {
+            // Ubah jadi text agar password kelihatan
+            passwordInput.type = 'text';
+            // Ubah ikon mata menjadi mata dicoret
+            eyeIcon.classList.remove('fa-eye');
+            eyeIcon.classList.add('fa-eye-slash');
+        } else {
+            // Kembalikan jadi password agar disembunyikan
+            passwordInput.type = 'password';
+            // Kembalikan ikon mata biasa
+            eyeIcon.classList.remove('fa-eye-slash');
+            eyeIcon.classList.add('fa-eye');
+        }
+    });
+    document.getElementById('formLogin').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    // 2. Data akun bawaan tim (Default Admin)
-    const defaultUser = "admin";
-    const defaultPass = "123456";
+        // 1. Ambil input dari form
+        const usernameInput = document.getElementById('loginEmail').value;
+        const passwordInput = document.getElementById('loginPassword').value;
 
-    // 3. Ambil data dari hasil register
-    const registeredUser = localStorage.getItem('storedUsername');
-    const registeredPass = localStorage.getItem('storedPassword');
+        // 2. Data akun bawaan tim (Default Admin)
+        const defaultUser = "admin";
+        const defaultPass = "123456";
 
-    // 4. Cek Logika
-    if (usernameInput === defaultUser && passwordInput === defaultPass) {
-        alert("Login Berhasil! Selamat datang Admin CleanWash.");
-        window.location.href = "index.html"; 
-    } 
-    else if (registeredUser && usernameInput === registeredUser && passwordInput === registeredPass) {
-        alert("Login Berhasil! Selamat datang @" + registeredUser + " di CleanWash.");
-        window.location.href = "index.html"; 
-    } 
-    else {
-        alert("Login Gagal! Username atau kata sandi salah.");
-    }
-});
+        // 3. Ambil data dari hasil register
+        const registeredUser = localStorage.getItem('storedUsername');
+        const registeredPass = localStorage.getItem('storedPassword');
+
+        // 4. Cek Logika
+        if (usernameInput === defaultUser && passwordInput === defaultPass) {
+            alert("Login Berhasil! Selamat datang Admin CleanWash.");
+            window.location.href = "index.html";
+        }
+        else if (registeredUser && usernameInput === registeredUser && passwordInput === registeredPass) {
+            alert("Login Berhasil! Selamat datang @" + registeredUser + " di CleanWash.");
+            window.location.href = "index.html";
+        }
+        else {
+            alert("Login Gagal! Username atau kata sandi salah.");
+        }
+    });
 </script>
 
 

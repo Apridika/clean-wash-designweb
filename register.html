@@ -144,17 +144,31 @@
                         </div> -->
 
                         <!-- Input Password -->
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="regPassword" placeholder="Password"
-                                required>
-                            <label for="regPassword">Kata Sandi</label>
+                        <div class="position-relative mb-3">
+                            <div class="form-floating">
+                                <input type="password" class="form-control pe-5" id="regPassword"
+                                    placeholder="Password" required>
+                                <label for="regPassword">Kata Sandi</label>
+                            </div>
+                            <button type="button" id="togglePassword"
+                                class="btn position-absolute top-50 end-0 translate-middle-y me-3 text-secondary border-0 bg-transparent"
+                                style="z-index: 10;">
+                                <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                            </button>
                         </div>
 
                         <!-- Input Konfirmasi Password -->
-                        <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="regPasswordConfirm"
-                                placeholder="Konfirmasi Password" required>
-                            <label for="regPasswordConfirm">Konfirmasi Kata Sandi</label>
+                        <div class="position-relative mb-3">
+                            <div class="form-floating">
+                                <input type="password" class="form-control pe-5" id="regPasswordConfirm"
+                                    placeholder="Password" required>
+                                <label for="regPasswordConfirm">Konfirmasi Kata Sandi</label>
+                            </div>
+                            <button type="button" id="togglePasswords"
+                                class="btn position-absolute top-50 end-0 translate-middle-y me-3 text-secondary border-0 bg-transparent"
+                                style="z-index: 10;">
+                                <i class="fa-regular fa-eye" id="eyeIconConfirm"></i>
+                            </button>
                         </div>
 
                         <!-- Syarat & Ketentuan -->
@@ -186,6 +200,33 @@
 
 <script src="app.js"></script>
 <script>
+   // Fitur Show/Hide Password Pertama
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('regPassword');
+    const eyeIcon = document.getElementById('eyeIcon');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+});
+
+// Fitur Show/Hide Password Konfirmasi
+document.getElementById('togglePasswords').addEventListener('click', function () {
+    const confirmInput = document.getElementById('regPasswordConfirm');
+    const eyeIconConfirm = document.getElementById('eyeIconConfirm');
+    
+    if (confirmInput.type === 'password') {
+        confirmInput.type = 'text';
+        eyeIconConfirm.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        confirmInput.type = 'password';
+        eyeIconConfirm.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+});
     document.getElementById('formRegister').addEventListener('submit', function (event) {
         event.preventDefault();
 

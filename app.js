@@ -185,7 +185,11 @@ window.kirimWhatsApp = function () {
   const name = document.getElementById("custName").value;
   const phone = document.getElementById("custPhone").value;
   const address = document.getElementById("custAddress").value;
-  const total = document.getElementById("totalAmount").innerText;
+  let totalHargaKalkulator = 0;
+  cart.forEach((item) => {
+    totalHargaKalkulator += item.price * item.qty;
+  });
+  const total = `Rp ${totalHargaKalkulator.toLocaleString("id-ID")}`;
   const estimate = document.getElementById("totalEstimate").innerText;
 
   let orderDetails = "";
@@ -206,7 +210,20 @@ window.kirimWhatsApp = function () {
     `Mohon konfirmasinya, terima kasih.`;
 
   const encodedMsg = encodeURIComponent(message);
-  window.open(`https://wa.me/6281234567890?text=${encodedMsg}`, "_blank");
+  const semuaPesanan =
+    JSON.parse(localStorage.getItem("cleanwash_orders")) || [];
+  semuaPesanan.push({
+    id: Math.floor(Math.random() * 1000),
+    customerName: name,
+    customerPhone: phone,
+    customerAddress: address,
+    items: cart,
+    status: "Pending",
+    total: total,
+    date: new Date().toLocaleDateString(),
+  });
+  localStorage.setItem("cleanwash_orders", JSON.stringify(semuaPesanan));
+  window.location.href = "riwayat-order.html";
 };
 
 document.addEventListener("input", (e) => {
